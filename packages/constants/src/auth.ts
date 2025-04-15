@@ -11,8 +11,7 @@ export const SPACE_PASSWORD_CRITERIA = [
   {
     key: "min_8_char",
     label: "Min 8 characters",
-    isCriteriaValid: (password: string) =>
-      password.length >= PASSWORD_MIN_LENGTH,
+    isCriteriaValid: (password: string) => password.length >= PASSWORD_MIN_LENGTH,
   },
   // {
   //   key: "min_1_upper_case",
@@ -125,9 +124,11 @@ export enum EAuthErrorCodes {
   GOOGLE_NOT_CONFIGURED = "5105",
   GITHUB_NOT_CONFIGURED = "5110",
   GITLAB_NOT_CONFIGURED = "5111",
+  OIDC_NOT_CONFIGURED = "5112",
   GOOGLE_OAUTH_PROVIDER_ERROR = "5115",
   GITHUB_OAUTH_PROVIDER_ERROR = "5120",
   GITLAB_OAUTH_PROVIDER_ERROR = "5121",
+  OIDC_OAUTH_PROVIDER_ERROR = "5122",
   // Reset Password
   INVALID_PASSWORD_TOKEN = "5125",
   EXPIRED_PASSWORD_TOKEN = "5130",

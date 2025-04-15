@@ -9,6 +9,7 @@ import {
 } from "@plane/types";
 // components
 import { AuthenticationMethodCard } from "@/components/authentication";
+import { OpenIDConnectConfiguration } from "@/components/authentication/oidc-config";
 // helpers
 import { getBaseAuthenticationModes } from "@/lib/auth-helpers";
 // plane admin components
@@ -29,6 +30,13 @@ export const getAuthenticationModes: (props: TGetBaseAuthenticationModeProps) =>
   resolvedTheme,
 }) => [
   ...getBaseAuthenticationModes({ disabled, updateConfig, resolvedTheme }),
+  {
+    key: "oidc-inofficial",
+    name: "OpenID Connect (Inofficial)",
+    description: "Authenticate your users via the OpenID Connect protocol.",
+    icon: <Image src={OIDCLogo} height={22} width={22} alt="OIDC Logo" />,
+    config: <OpenIDConnectConfiguration disabled={disabled} updateConfig={updateConfig} />,
+  },
   {
     key: "oidc",
     name: "OIDC",

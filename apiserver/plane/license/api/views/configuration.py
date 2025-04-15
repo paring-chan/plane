@@ -39,6 +39,7 @@ class InstanceConfigurationEndpoint(BaseAPIView):
         configurations = InstanceConfiguration.objects.filter(
             key__in=request.data.keys()
         )
+        print('instance config', configurations)
 
         bulk_configurations = []
         for configuration in configurations:
